@@ -4,6 +4,10 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
+// import ngx-translate and the http loader
+
+import { HttpClient } from '@angular/common/http';
+
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 
 import { environment } from '../environments/environment';
@@ -21,6 +25,7 @@ import { SharedModule } from './shared/shared.module';
     BrowserAnimationsModule,
 
     HttpClientModule,
+
     ServiceWorkerModule.register('/ngsw-worker.js', {
       enabled: environment.production
     }),

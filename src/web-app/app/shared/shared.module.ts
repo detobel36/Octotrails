@@ -9,6 +9,7 @@ import {
   QuestionTypeStringComponent,
   NavbarComponent
 } from './components/';
+import { TranslatePipe } from './pipes/translate.pipe';
 import { RangeValidatorDirective } from './directives/range.directive';
 import { MatDesignModule } from './mat-design/mat-design.module';
 
@@ -17,6 +18,7 @@ import { MatDesignModule } from './mat-design/mat-design.module';
   declarations: [
     PageNotFoundComponent,
     RangeValidatorDirective,
+    TranslatePipe,
     QuestionTypeNumberComponent,
     QuestionTypeBooleanComponent,
     QuestionTypeMultipleComponent,
@@ -28,6 +30,7 @@ import { MatDesignModule } from './mat-design/mat-design.module';
     MatDesignModule,
     PageNotFoundComponent,
     RangeValidatorDirective,
+    TranslatePipe,
     MatDesignModule,
     QuestionTypeNumberComponent,
     QuestionTypeBooleanComponent,

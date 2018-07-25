@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 
+import { TranslateService } from './shared/services/translate.service';
+
 import {
   Router,
   Event,
@@ -18,7 +20,9 @@ export class AppComponent {
   title: string = 'Octotrails-starter';
   loading: boolean = true;
 
-  constructor(private router: Router) {
+  constructor(private translate: TranslateService, private router: Router) {
+    translate.use('en').subscribe(trans => console.log(trans));
+
     router.events.subscribe((routerEvent: Event) => {
       this.checkRouterEvent(routerEvent);
     });
