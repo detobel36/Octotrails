@@ -79,18 +79,18 @@
       <article class="address-content">
         <div class="address">{{stop.address["nl"]}}</div>
         <a class="location" routerLink="/stops/{{stop.id}}/location">
-          <img src="/assets/icons/locationPin.svg" height="30" alt="locationPin" /> {{'stops.details.buttons.show-map' | translate}}
+          <img src="/assets/icons/locationPin.svg" height="30" alt="locationPin" /> {{'stops.details.button.show-map' | translate}}
         </a>
       </article>
     </section>
   </div>
   <div class="buttons">
     <a class="history-button" [routerLink]="['./', 'histories']">
-      <img class="button-icon" src="/assets/icons/history.svg" width="30" height="30" alt="" /> {{'stops.details.buttons.history' | translate}}
+      <img class="button-icon" src="/assets/icons/history.svg" width="30" height="30" alt="" /> {{'stops.details.button.history' | translate}}
     </a>
     <div class="stripe"></div>
     <a class="update-button" [routerLink]="['./', 'categories']">
-      <img class="button-icon" src="/assets/icons/update.svg" width="30" height="30" alt="" /> {{'stops.details.buttons.update' | translate}}
+      <img class="button-icon" src="/assets/icons/update.svg" width="30" height="30" alt="" /> {{'stops.details.button.update' | translate}}
     </a>
   </div>
   <div class="empty-div"></div>
