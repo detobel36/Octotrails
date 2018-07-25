@@ -6,8 +6,7 @@ export const environment = {
   production: false,
   API_URL: 'http://localhost:8081/',
   mapbox: {
-    accessToken:
-      'pk.eyJ1IjoiYnJhbWJsZXlzIiwiYSI6ImNqam82cmIyZjIzcWozcW0wdjh6enB4Y3kifQ.udssCP8HoCZCKddR4FF8FA',
+    accessToken: '',
     style: 'mapbox://styles/mapbox/light-v9'
   }
 };
