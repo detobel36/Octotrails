@@ -64,6 +64,8 @@
     "@angular/pwa": "^0.6.8",
     "@angular/router": "^6.0.7",
     "@angular/service-worker": "^6.0.0",
+    "@ngx-translate/core": "^10.0.2",
+    "@ngx-translate/http-loader": "^3.0.1",
     "app-root-path": "^2.0.1",
     "babel-polyfill": "^6.26.0",
     "babel-register": "^6.26.0",
