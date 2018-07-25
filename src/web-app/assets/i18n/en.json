@@ -1,0 +1,17 @@
+{
+	"histories.list.item": "Update of",
+	"navbar.back.button": "Back",
+	"navbar.histories.date": "on",
+	"navbar.histories.title": "History of {{title}}",
+	"questions.overview.buttons.done": "Done",
+	"questions.overview.progress.of": "of",
+	"questions.type.boolean.no": "No",
+	"questions.type.boolean.yes": "Yes",
+	"stops.details.address": "Address",
+	"stops.details.buttons.history": "History",
+	"stops.details.buttons.show-map": "Show map",
+	"stops.details.buttons.update": "Update",
+	"stops.details.served-lines": "Served lines",
+	"stops.seach-input.aria-label": "Search...",
+	"stops.seach-input.placeholder": "Search a stop"
+}

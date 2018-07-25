@@ -14,7 +14,7 @@
           		c0.6,0.6,1.5,0.5,2.1-0.1c0.6-0.6,0.5-1.5-0.1-2.1L3.6,12l10.2-9.5C14.4,2,14.4,1.1,13.9,0.5z" fill=url(#grad1)/>
         </g>
       </svg>
-      Back
+      {{'navbar.back.button' | translate}}
     </a>
 
     <ng-container *ngIf="isOnStopDetailPage">
@@ -73,7 +73,7 @@
 
     <ng-container *ngIf="isOnHistoriesPage && !historyDate">
       <div class="header-title">
-        <h2 class="stop-title">History of {{stopName}}</h2>
+        <h2 class="stop-title" translate [translateParams]="{stopName}">navbar.histories.title</h2>
         <h3 class="stop-id">ID : {{stopId}}</h3>
       </div>
       <div width="32.433"></div>
@@ -81,8 +81,8 @@
 
     <ng-container *ngIf="historyDate">
       <div class="header-title">
-        <h2 class="stop-title">History of {{stopName}}</h2>
-        <h3 class="stop-id">on {{ historyDate | date: 'EE dd MMMM yyyy'}}</h3>
+        <h2 class="stop-title">navbar.histories.title</h2>
+        <h3 class="stop-id">{{ navbar.histories.date | translate }} {{ historyDate | date: 'EE dd MMMM yyyy'}</h3>
       </div>
       <div width="32.433"></div>
     </ng-container>

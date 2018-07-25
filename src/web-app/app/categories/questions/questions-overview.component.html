@@ -1,7 +1,7 @@
 <app-navbar stopName="Stop Name" [stopId]="stop_id">
   <div>
     <mat-progress-bar class="progress-bar" mode="determinate" value="{{progressValue}}"></mat-progress-bar>
-    <p class="progress-tag">{{answeredQuestions}} of {{totalNumberOfQuestions}}</p>
+    <p class="progress-tag">{{answeredQuestions}} {{'questions.overview.progress.of' | translate}} {{totalNumberOfQuestions}}</p>
   </div>
 </app-navbar>
 
@@ -15,6 +15,6 @@
 </div>
 
 <div class="end-buttons">
-  <a class="done-button" (click)="saveAnswers()">Done</a>
+  <a class="done-button" (click)="saveAnswers()">{{'questions.overview.buttons.done' | translate}}</a>
 </div>
 <div class="empty-div"></div>
