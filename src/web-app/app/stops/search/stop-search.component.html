@@ -5,8 +5,7 @@
 <section class="search-section">
   <form class="search-component">
     <mat-form-field class="search-form-field">
-      <input matInput placeholder="Search a stop" aria-label="{{'stops.seach-input.aria-label' | translate}}" [matAutocomplete]="auto"
-        [formControl]="stopCtrl">
+      <input matInput placeholder="Search a stop" [matAutocomplete]="auto" [formControl]="stopCtrl">
       <mat-autocomplete #auto="matAutocomplete">
         <mat-option class="mat-option" *ngFor="let stop of filteredStops | async" [value]="stop.id">
           <a class="search-result" (click)="showDetails(stop)">

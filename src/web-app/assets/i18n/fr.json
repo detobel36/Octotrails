@@ -2,6 +2,8 @@
 	"histories.list.item": "Réponses du ",
 	"navbar.button.back": "Retour",
 	"navbar.button.done": "Soumetre",
+	"navbar.categories.choose": "Sélectionner une catégorie",
+	"navbar.categories.title": "Catégories",
 	"navbar.histories.date": "le",
 	"navbar.histories.title": "Historique de {{title}}",
 	"questions.overview.buttons.done": "Soumettre",

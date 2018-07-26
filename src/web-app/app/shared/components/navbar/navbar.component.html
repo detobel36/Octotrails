@@ -16,7 +16,7 @@
               fill=url(#grad1)/>
           </g>
         </svg>
-        Back
+        {{'navbar.button.back' | translate}}
       </a>
 
       <ng-container *ngIf="isOnQuestionsPage">
@@ -75,8 +75,8 @@
     </ng-container>
 
     <ng-container *ngIf="isOnCategoriesPage">
-      <h1 class="section-title">Categories</h1>
-      <h2 class="section-sub-title">Choose a category</h2>
+      <h1 class="section-title">{{'navbar.categories.title' | translate}}</h1>
+      <h2 class="section-sub-title">{{'navbar.categories.choose' | translate}}</h2>
     </ng-container>
     <ng-content></ng-content>
   </div>

@@ -2,6 +2,8 @@
 	"histories.list.item": "Update of",
 	"navbar.button.back": "Back",
 	"navbar.button.done": "Done",
+	"navbar.categories.choose": "Choose a category",
+	"navbar.categories.title": "Categories",
 	"navbar.histories.date": "on",
 	"navbar.histories.title": "History of {{title}}",
 	"questions.overview.buttons.done": "Done",
