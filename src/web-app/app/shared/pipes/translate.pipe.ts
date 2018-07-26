@@ -16,7 +16,7 @@ import { TranslateService } from '../services/translate.service';
 export class TranslatePipe implements PipeTransform, OnDestroy {
   constructor(private translateService: TranslateService) {}
   transform(key: any): any {
-    return this.translateService.data[key] || key;
+    return this.translateService.translations[key] || key;
   }
   ngOnDestroy() {}
 }

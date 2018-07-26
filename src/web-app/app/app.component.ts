@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, LOCALE_ID } from '@angular/core';
 
 import { TranslateService } from './shared/services/translate.service';
 
@@ -21,7 +21,9 @@ export class AppComponent {
   loading: boolean = true;
 
   constructor(private translate: TranslateService, private router: Router) {
-    translate.use('en').subscribe(trans => console.log(trans));
+    translate.use('fr').subscribe(trans => console.log(trans));
+    // console.log(translate.data);
+    console.log(translate.getBrowserLang());
 
     router.events.subscribe((routerEvent: Event) => {
       this.checkRouterEvent(routerEvent);
