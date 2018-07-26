@@ -36,10 +36,10 @@
                 <name>navbar</name>
                 <children>
                     <folder_node>
-                        <name>back</name>
+                        <name>button</name>
                         <children>
                             <concept_node>
-                                <name>button</name>
+                                <name>back</name>
                                 <definition_loaded>false</definition_loaded>
                                 <description></description>
                                 <comment></comment>
@@ -47,11 +47,28 @@
                                 <translations>
                                     <translation>
                                         <language>en-US</language>
-                                        <approved>true</approved>
+                                        <approved>false</approved>
                                     </translation>
                                     <translation>
                                         <language>fr-FR</language>
-                                        <approved>true</approved>
+                                        <approved>false</approved>
+                                    </translation>
+                                </translations>
+                            </concept_node>
+                            <concept_node>
+                                <name>done</name>
+                                <definition_loaded>false</definition_loaded>
+                                <description></description>
+                                <comment></comment>
+                                <default_text></default_text>
+                                <translations>
+                                    <translation>
+                                        <language>fr-FR</language>
+                                        <approved>false</approved>
+                                    </translation>
+                                    <translation>
+                                        <language>en-US</language>
+                                        <approved>false</approved>
                                     </translation>
                                 </translations>
                             </concept_node>
@@ -220,7 +237,7 @@
                                 </translations>
                             </concept_node>
                             <folder_node>
-                                <name>buttons</name>
+                                <name>button</name>
                                 <children>
                                     <concept_node>
                                         <name>history</name>
