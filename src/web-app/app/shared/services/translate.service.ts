@@ -1,23 +1,42 @@
-import { Injectable } from '@angular/core';
+import { Injectable, APP_INITIALIZER } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs-compat/operator/map';
-import { catchError } from 'rxjs/operators';
+import { catchError, tap } from 'rxjs/operators';
+
+/**
+ * Load && Set en as the default app language
+ * @param service
+ */
+export function setupTranslateFactory(service: TranslateService): Function {
+  return () => service.use('en');
+}
 
 @Injectable({
   providedIn: 'root'
+  // useFactory: setupTranslateFactory,
+  // deps: [TranslateService],
+  // useClass: APP_INITIALIZER,
+  // useExisting: APP_INITIALIZER
 })
 export class TranslateService {
+  currentLang: String;
   data: any = {};
 
   constructor(private http: HttpClient) {}
 
+  /**
+   * Initiate the file download and language switch.
+   * @param lang Lang to currently use.
+   */
   use(lang: string = 'en'): Observable<Object> {
+    this.currentLang = lang;
     const langPath = `assets/i18n/${lang}.json`;
 
-    return this.http
-      .get<Object>(langPath)
-      .pipe(catchError(this.handleError('searchStops', {})));
+    return this.http.get<Object>(langPath).pipe(
+      tap(trads => (this.data = trads)),
+      catchError(this.handleError('searchStops', {}))
+    );
   }
 
   /**

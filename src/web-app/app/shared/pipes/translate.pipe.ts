@@ -6,6 +6,7 @@ import {
   Pipe,
   PipeTransform
 } from '@angular/core';
+import { TranslateService } from '../services/translate.service';
 
 @Injectable()
 @Pipe({
@@ -13,6 +14,9 @@ import {
   pure: false // required to update the value when the promise is resolved
 })
 export class TranslatePipe implements PipeTransform, OnDestroy {
-  transform() {}
+  constructor(private translateService: TranslateService) {}
+  transform(key: any): any {
+    return this.translateService.data[key] || key;
+  }
   ngOnDestroy() {}
 }
