@@ -11,7 +11,9 @@ services:
     links:
       - mongo
     depends_on:
-      - mongo
+      - mongo 
+    volumes:
+      - ./:/usr/src/app
   mongo:
     container_name: mongo
     image: mongo
