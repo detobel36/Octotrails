@@ -10,10 +10,12 @@ import { Location } from '@angular/common';
 
 import { Stop } from '../stop';
 import { StopService } from '../stops.service';
-import { AnimationConfig } from '../../my-octotrails-ng6-carousel';
+import { History } from '../../histories/history';
 
+import { AnimationConfig } from '../../my-octotrails-ng6-carousel';
 import { slideInDownAnimation } from '../../shared/animations';
 import { Data } from '../../shared/providers/data.provider';
+import { TranslateService } from '../../shared/services/translate.service';
 
 @Component({
   animations: [slideInDownAnimation],
@@ -27,10 +29,12 @@ export class StopDetailComponent implements OnInit, OnDestroy {
 
   @Input() stop: Stop;
 
-  public imageSources: string[];
+  recentHistory: History;
 
-  public config = {
-    verifyBeforeLoad: true,
+  imageSources: string[];
+
+  carousselConfig = {
+    verifyBeforeLoad: false,
     log: false,
     animation: true,
     animationType: AnimationConfig.APPEAR,
@@ -44,18 +48,25 @@ export class StopDetailComponent implements OnInit, OnDestroy {
   constructor(
     private route: ActivatedRoute,
     private router: Router,
-    private data: Data
+    private data: Data,
+    private translate: TranslateService,
+    private stopService: StopService
   ) {}
 
   ngOnInit() {
     this.stop = this.route.snapshot.data['stop'];
+
+    this.stopService
+      .getMostRecentHistory(this.stop.id)
+      .subscribe(histo => (this.recentHistory = histo));
+
     if (this.stop.images.length > 0) {
       this.imageSources = this.stop.images;
     } else {
       this.imageSources = [
-        'https://picsum.photos/1920/1080/?random',
-        'https://picsum.photos/1920/1080/?image=1074',
-        'https://picsum.photos/1920/1080/?image=1080'
+        'https://picsum.photos/1920/1080/?image=299',
+        'https://picsum.photos/1920/1080/?image=524',
+        'https://picsum.photos/1920/1080/?image=800'
       ];
     }
   }
@@ -83,7 +94,7 @@ export class StopDetailComponent implements OnInit, OnDestroy {
     setTimeout(() => {
       this.imageSources = [img, ...this.imageSources];
 
-      this.config = { ...this.config };
+      this.carousselConfig = { ...this.carousselConfig };
       this.enabledCaroussel = true;
     }, 300);
   }
