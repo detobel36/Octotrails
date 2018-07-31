@@ -1,4 +1,3 @@
-import https from 'https';
 import httpStatus from 'http-status';
 import { validationResult, Result } from 'express-validator/check';
 
@@ -7,6 +6,9 @@ import APIError from '../helpers/APIError';
 import { checkValidationErrors } from '../helpers/utils';
 
 import History from '../models/history.model';
+
+var request = require('request');
+
 
 const STIB_API = config.stibApi;
 
@@ -19,18 +21,11 @@ const sendRequestToAPI = function sendReq(url, errMsg, callback) {
   const sendError = () => callback(new APIError(errMsg, httpStatus.NOT_FOUND));
 
   // Send
-  https.get(url, function(respApi) {
-    let apiData = '';
+  request({'url':url}, function (error, response, body) {
+    if (response && response.statusCode !== 200) return sendError();
+    if(error) return sendError();
 
-    if (respApi.statusCode !== 200) return sendError();
-
-    // A chunk of data has been recieved.
-    respApi.on('data', chunk => (apiData += chunk));
-
-    // The whole response has been received. Send back the result.
-    respApi.on('end', () => callback(null, JSON.parse(apiData)));
-
-    respApi.on('error', sendError);
+    callback(null, JSON.parse(body));
   });
 };
 
@@ -40,7 +35,6 @@ const sendRequestToAPI = function sendReq(url, errMsg, callback) {
 function search(req, res, next) {
   const { by, term } = req.query;
   let url;
-
   checkValidationErrors(validationResult(req));
 
   if (by == 'stop_name') {
